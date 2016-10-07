@@ -1,0 +1,44 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "https://wordpress.com/wp-login.php"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "user_login"
+      },
+      "text": "j"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "user_pass"
+      },
+      "text": "k"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "wp-submit"
+      }
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "ERROR: Invalid email or username. Lost your password?"
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}
